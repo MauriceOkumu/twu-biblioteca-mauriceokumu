@@ -10,6 +10,7 @@ public class BibliotecaApp {
         System.out.println("Welcome to Biblioteca.Your one-stop shop for great books in Bangalore!");
         bookLists.populate();
         System.out.println("These are some of the books in our collection.");
+        System.out.println(bookLists.viewList());
         System.out.println(bookLists.showList());
 
     }
