@@ -1,9 +1,5 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.*;
-import java.util.List;
 
 public class BibliotecaApp {
 
