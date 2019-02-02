@@ -28,6 +28,9 @@ public class TableMaker {
     public  String makeTable() {
 
         String[][] table = new String[columns][rows];
+        table[0][0] = "Author";
+        table[0][1] = "Book Title";
+        table[0][2] = "Year Published";
         String visualizeTable = "";
 
         for(int horizontal = 0; horizontal < table.length;horizontal++) {
@@ -39,11 +42,5 @@ public class TableMaker {
         return visualizeTable;
     }
 
-    public static void  main(String[] args) {
-        System.out.println("The making of the table");
-        TableMaker showTable = new TableMaker();
-        showTable.setRows(3);
-        showTable.setColumns(8);
-        System.out.println(showTable.makeTable());
-    }
+
 }
