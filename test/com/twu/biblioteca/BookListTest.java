@@ -18,4 +18,8 @@ public class BookListTest {
     public void populateTest() {
         assertEquals(testBookList.list.get(2), "The Nest");
     }
+    @Test
+    public void showListTest() {
+        assertEquals(testBookList.showList(), true);
+    }
 }
