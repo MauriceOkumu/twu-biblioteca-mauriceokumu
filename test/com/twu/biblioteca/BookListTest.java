@@ -15,10 +15,14 @@ public class BookListTest {
     }
     @Test
     public void populateTest() {
-        assertEquals(testBookList.list.get(2), "The Nest");
+        assertEquals(testBookList.list.get(1).get(1), "The Heightsing");
     }
     @Test
     public void showListTest() {
-        assertEquals(testBookList.showList(), true);
+        assertEquals(testBookList.showList().length(),205);
+    }
+    @Test
+    public void checkList() {
+        assertEquals(testBookList.viewList().length(), 75);
     }
 }
