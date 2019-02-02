@@ -4,8 +4,8 @@ import java.util.*;
 public class BookList {
     public ArrayList list;
 
-    public  BookList(ArrayList bookList) {
-        this.list = bookList;
+    public  BookList() {
+        this.list = new ArrayList<>();
     }
 
     public void populate() {
