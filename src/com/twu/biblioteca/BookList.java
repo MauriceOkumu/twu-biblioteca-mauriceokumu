@@ -53,4 +53,11 @@ public class BookList {
 
 
     }
+    public String viewList() {
+        String listOfAllBooks = "";
+        for(int book = 0; book < list.size(); book++) {
+            listOfAllBooks +=list.get(book).get(1)+"\n";
+        }
+        return listOfAllBooks;
+    }
 }
