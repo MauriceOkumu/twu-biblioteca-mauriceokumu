@@ -12,7 +12,7 @@ public class MenuTest {
     public void createMenu() {
         menuTest = new Menu();
         menuTest.menu.add("List of Books");
-     
+
     }
 
     @Test
