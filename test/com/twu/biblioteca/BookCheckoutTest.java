@@ -10,11 +10,12 @@ public class BookCheckoutTest {
     @Before
     public void checkout() {
         checkOutTest = new BookCheckout();
+        checkOutTest.startProcess();
     }
 
     @Test
     public void testCheckOut() {
 
-        assertEquals(true, false);
+        assertEquals(checkOutTest.bookLists.list.isEmpty(), false);
     }
 }
