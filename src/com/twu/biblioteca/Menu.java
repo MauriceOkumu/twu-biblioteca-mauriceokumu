@@ -9,6 +9,9 @@ public class Menu {
     public String userInput = "1",input,checkout;
     public Reader reader;
     public String optOut;
+    public String nameOfBook;
+    public String returningBook;
+    List <String> bookInfo;
 
     public Menu() {
         this.menu = new ArrayList<>();
@@ -38,8 +41,8 @@ public class Menu {
             input = reader.scan();
             if(userInput.equals(input)) {
                 System.out.println(bookLists.showList()+"\n");
-            } else if(!input.equals(userInput) && !input.equals("yes")){
-                System.out.println("Please select a valid option! Yes or 1");
+            } else if(!input.equals(userInput) && !input.equals("quit")){
+                System.out.println("Please select a valid option! quit or 1");
             } else {
                 optToQuit();
             }
@@ -53,10 +56,10 @@ public class Menu {
         System.out.print("Choose a number from above menu to checkout a book");
         checkout = reader.scan();
         int ind = Integer.parseInt(checkout);
-        //System.out.println("This is a check  =>"+ bookLists.list.get(ind));
-        //for( int i = 0; i < bookLists.list.size(); i++) {
             if(bookLists.list.size() > ind) {
                 System.out.println("You successfully checked out a book by the title :"+ bookLists.list.get(ind).get(0));
+                nameOfBook = bookLists.list.get(ind).get(0).toLowerCase();
+                bookInfo = bookLists.list.get(ind);
                 allBooks.showMessage();
                 bookLists.list.remove(Integer.parseInt(checkout));
                 System.out.println("These are the remaining books!");
@@ -72,6 +75,22 @@ public class Menu {
             }
         //}
         optToQuit();
+
+    }
+    public void returnBook() {
+        System.out.print("What is the title of the book you are returning?");
+        returningBook = reader.scan();
+        if(nameOfBook.equals(returningBook)) {
+            System.out.println("NameOfBook =>"+nameOfBook+" : user input =>"+returningBook);
+            System.out.println("" + nameOfBook);
+            bookLists.list.add(bookInfo);
+            System.out.println("Thank You for returning the book!");
+            showMenu();
+        } else {
+            System.out.println("That is not a valid book to return !");
+            System.out.println("Fix you spelling and try again!");
+             returnBook();
+        }
 
     }
 
@@ -94,6 +113,10 @@ public class Menu {
         bookLists = allBooks.bookLists;
         showMenu();
         checkOUt();
+        if(!nameOfBook.equals(null)) {
+            returnBook();
+        }
+
 
     }
 
