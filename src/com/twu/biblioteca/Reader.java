@@ -2,23 +2,23 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 public class Reader {
-    Scanner s ;
+    Scanner scanner ;
 
     public Reader() {
-        s = new Scanner(System.in);
+        scanner = new Scanner(System.in);
     }
 
     public String scan() {
         String input;
-        if (s.hasNextLine()) {
-            input = s.nextLine();
+        if (scanner.hasNextLine()) {
+            input = scanner.nextLine();
         } else {
-            input = "ERROR";
+            input = "ERROR scanning the input";
         }
         return input.toLowerCase();
     }
 
     public void close(){
-        s.close();
+        scanner.close();
     }
 }
